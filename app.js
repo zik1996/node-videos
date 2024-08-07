@@ -11,10 +11,12 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 app.use(cors());
 
+// This is home page
 app.get("/", (req, res)=>{
     res.send("<h1>Welcome to Node JS</h1>")
 })
 
+//this is admin routes
 app.get("/admin", (req, res)=>{
     mongoClient.connect(constr).then((clientObject)=>{
         var database = clientObject.db("reactdb");
